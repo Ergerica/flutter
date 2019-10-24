@@ -1,4 +1,0 @@
-#Tue Jul 09 16:22:16 AST 2019
-base.0=/home/erica/Documents/todo_app/build/app/intermediates/transforms/dexMerger/debug/0
-path.0=classes.dex
-renamed.0=classes.dex
