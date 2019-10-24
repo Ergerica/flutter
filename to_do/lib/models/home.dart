@@ -9,18 +9,17 @@ class HomeD extends StatefulWidget {
 }
 
 class Home extends State<HomeD> {
-
-
   final _textFieldController = TextEditingController();
   final GlobalKey<TodoList> _key = GlobalKey();
 
-    @override
+  @override
   void dispose() {
     // Clean up the controller when the widget is removed from the
     // widget tree.
     _textFieldController.dispose();
     super.dispose();
   }
+
   _displayDialog(BuildContext context) {
     return showDialog(
         context: context,
@@ -44,7 +43,8 @@ class Home extends State<HomeD> {
                   //var todo = new Todo(title: _textFieldController.value.text);
                   //  todol.setTodo(todo);
                   //todol.setState(() {});
-                  _key.currentState.setTodo(Todo(title: _textFieldController.text));
+                  _key.currentState
+                      .setTodo(Todo(title: _textFieldController.text));
                   setState(() {});
                   Navigator.of(context).pop();
                 },
@@ -57,17 +57,16 @@ class Home extends State<HomeD> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      
       appBar: new AppBar(
-          backgroundColor: Colors.pink[100], centerTitle: true,title: new Text('Todo List',style: TextStyle(color: Colors.black),),) ,
+        backgroundColor: Colors.pink[100],
+        centerTitle: true,
+        title: new Text('Todo List'),
+      ),
       body: TodoListS(key: _key),
       floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.add), onPressed: () => _displayDialog(context),
-          backgroundColor: Colors.blue[300]
-
-          ),
-          
-          
+          child: Icon(Icons.add),
+          onPressed: () => _displayDialog(context),
+          backgroundColor: Colors.blue[300]),
     );
   }
 }
